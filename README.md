@@ -24,4 +24,4 @@ This project is licensed under the no License license.
 The following is needed to run the test: no commands needed, website is deployed
 https://writemynotes.herokuapp.com/. 
 # Questions
-If you have any questions about the repo, open an issue or contact @bannywalia directly at : banny.walia07@gmail.com.
+If you have any questions about the repo, open an issue or contact @bannywalia directly at
