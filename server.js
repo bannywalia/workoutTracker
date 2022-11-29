@@ -1,19 +1,20 @@
 const express = require("express");
-const app = express();
-const PORT = process.env.PORT || 3001;
-const apiRoutes = require('./routes/apiRoutes/index.js');
-const htmlRoutes = require('./routes/htmlRoutes.js/index.js.js');
+const sequelize = require('./config/connection');
 
-app.use(express.static('public'));
-// parse incoming string or array data
-app.use(express.urlencoded({extended: true}));
-// parse incoming JSON data
+const PORT = process.env.PORT || 3002;
+
+const app = express();
+
+app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-// Use apiRoutes
-app.use('/api', apiRoutes);
-app.use('/', htmlRoutes);
+app.use(express.static("public"));
 
-app.listen(PORT, () => {
-    console.log(`API server now on port ${PORT}. Welcome!`);
-  });
+// routes
+// add routes still into the app.use
+ app.use(require(""));
+ app.use(require(""));
+
+ sequelize.sync().then(() => {
+  app.listen(PORT, () => console.log('Now listening'));
+});
