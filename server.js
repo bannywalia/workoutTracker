@@ -12,8 +12,8 @@ app.use(express.static("public"));
 
 // routes
 // add routes still into the app.use
- app.use(require(""));
- app.use(require(""));
+ app.use(require("./routes/api.js"));
+ app.use(require("./routes/htmlRoutes.js"));
 
  sequelize.sync().then(() => {
   app.listen(PORT, () => console.log('Now listening'));
