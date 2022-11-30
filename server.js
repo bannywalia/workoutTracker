@@ -1,12 +1,14 @@
 const express = require("express");
 const sequelize = require('./config/connection');
+const path = require('path');
+const hbs = exphbs.create({});
 
 const PORT = process.env.PORT || 3002;
 
 const app = express();
 
-app.use(express.urlencoded({ extended: true }));
-app.use(express.json());
+app.engine('handlebars', hbs.engine);
+app.set('view engine', 'handlebars');
 
 app.use(express.static("public"));
 
